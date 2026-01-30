@@ -1,0 +1,9 @@
+/cache
+/src/cache
+/src/vision_loom/__pycache__
+/src/vision_loom/models/__pycache__
+/src/vision_loom/test_notebooks/cache
+/src/vision_loom/utils/__pycache__
+/src/vision_loom.egg-info
+/src/vision_loom/test_notebooks
+/src/detector_results

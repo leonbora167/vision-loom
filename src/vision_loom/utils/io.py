@@ -36,7 +36,7 @@ def mask_to_polygon(mask: np.ndarray, epsilon_ratio=0.005): #Convert binary mask
     return polygon.squeeze(1)  # (N, 2)
 
 def mask_to_contour_format(masks, image):
-    array_img = np.asarray(image)
+    array_img = np.array(image)
     image_h, image_w, _ = array_img.shape
     lines = []
     masks = masks.cpu().numpy()

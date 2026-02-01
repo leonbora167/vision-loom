@@ -4,9 +4,10 @@ Leverage Vision Language Models to label images and create training data for oth
 
 Vision Loom is an automated labeling framework designed to bridge the gap between high-reasoning Foundation Models and real-time edge deployment. Leverage the "zero-shot" capabilities of Vision-Language Models (VLMs) to generate high-fidelity training data without the manual overhead.
 
-| Model | Task | 
-Grounding Dino Tiny | Object Detection
-SAM-2 | Object Segmentation
+| Model | Task | Reference
+| :--- | :---: | ---: |
+Grounding Dino Tiny | Object Detection | detector_test.py
+SAM-2 | Object Segmentation | segmentation_test.py
 
 ## Save detection results
   
@@ -37,9 +38,10 @@ prompt = [["car", "person", "book", "bike"]]
 for img_path, image in tqdm(dataloader):
     results = model.detect(image, prompt, img_path, save_results=True)
 ``` 
+![Detector Pipeline V1](Detector_Pipeline_V1.jpg)
 
 
 ## Roadmap 
 
-- [] Add Image Classification Support
-- [] Options for export to classical SOTA formats like YOLO, COCO etc. 
+- [ ] Add Image Classification Support
+- [ ] Options for export to classical SOTA formats like YOLO, COCO etc. 

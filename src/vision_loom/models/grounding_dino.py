@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 
 # __init__ to load the model only once
 # Will only load the grounding dino model when the class is called and not during the import of this file 
-class GroundingDINO:
+class GroundingDINOTiny:
     def __init__(self, model_id="IDEA-Research/grounding-dino-tiny", cache_dir="./cache"): 
         self.model_id = model_id
         self.cache_dir = cache_dir
@@ -24,7 +24,7 @@ class GroundingDINO:
             self.model_id,
             cache_dir=self.cache_dir).to(self.device)
 
-    def detect(self, image, text_labels, image_path, results_folder = "detector_results",box_threhsold=0.4, text_threshold=0.3):
+    def detect(self, image, text_labels, image_path, save_results=False, results_folder = "detector_results", box_threhsold=0.4, text_threshold=0.3):
         inputs = self.processor(images=image, text=text_labels, return_tensors="pt").to(self.device)
         
         with torch.no_grad():
@@ -37,7 +37,8 @@ class GroundingDINO:
             text_threshold=text_threshold,
             target_sizes=[image.size[::-1]]
             )
-        self.save_results_txt(results, results_folder, image_path)
+        if save_results: #Only if flag is True for saving results
+            self.save_results_txt(results, results_folder, image_path)
         return results
     
     def save_results_txt(self, results, results_folder, image_path):
@@ -55,6 +56,6 @@ class GroundingDINO:
                 text_class = text_labels[index]
                 with open(label_path, "a") as f:
                     line = text_class + "\t" + str(x1) + "\t" + str(y1) + "\t" + str(x2) + "\t" + str(y2) + str(confidence_score)
-                    f.write(line)
+                    f.write(line + "\n")
         else:
             logging.info(f"Detections missed by Grounding Dino Tiny\t{time.time()}")

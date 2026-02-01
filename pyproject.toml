@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vision-loom"                # must be UNIQUE on PyPI
-version = "0.2.1"
+version = "0.2.2"
 description = "Framework to create labeling data from VLM and other larger models for computer vision tasks"
 readme = "documentation/PYPI.md"
 requires-python = ">=3.10"
@@ -51,3 +51,4 @@ where = ["src"]
 [project.urls]
 Repository = "https://github.com/leonbora167/vision-loom"
 Documentation = "https://github.com/leonbora167/vision-loom/blob/main/documentation/PYPI.md"
+Changelog = "https://github.com/leonbora167/vision-loom/CHANGELOG.md"

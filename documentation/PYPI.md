@@ -40,6 +40,8 @@ for img_path, image in tqdm(dataloader):
 ``` 
 ![Detector Pipeline V1](https://raw.githubusercontent.com/leonbora167/vision-loom/documentation/Detector_Pipeline_V1.jpg)
 
+## 📦 Releases
+See [CHANGELOG](./CHANGELOG.md) for version history.
 
 ## Roadmap 
 

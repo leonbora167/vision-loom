@@ -38,8 +38,7 @@ prompt = [["car", "person", "book", "bike"]]
 for img_path, image in tqdm(dataloader):
     results = model.detect(image, prompt, img_path, save_results=True)
 ``` 
-![Detector Pipeline V1](https://raw.githubusercontent.com/leonbora167/vision-loom/documentation/Detector_Pipeline_V1.jpg)
-
+![Detector Pipeline V1](https://raw.githubusercontent.com/leonbora167/vision-loom/main/documentation/Detector_Pipeline_V1.jpg)
 
 ## Roadmap 
 
